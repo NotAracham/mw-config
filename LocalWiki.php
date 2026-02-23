@@ -76,8 +76,10 @@ switch ( $wi->dbname ) {
 		};
 
 		break;
-	case 'bluearchivewiki':
-		$wgDplSettings['allowUnlimitedCategories'] = true;
+	case 'cecuwiki':
+		$wgVectorNightMode['beta'] = true;
+		$wgVectorNightMode['logged_in'] = true;
+		$wgVectorNightMode['logged_out'] = true;
 
 		break;
 	case 'combatinitiationwiki':
@@ -96,9 +98,6 @@ switch ( $wi->dbname ) {
 
 		break;
 	case 'constantnoblewiki':
-		$wgDplSettings['maxResultCount'] = 2500;
-		$wgDplSettings['maxCategoryCount'] = 100;
-
 		// T13620: Show AbuseFilter changes in RecentChanges
 		$wgExtensionFunctions[] = static function () {
 			global $wgLogRestrictions;
@@ -139,13 +138,17 @@ switch ( $wi->dbname ) {
 		];
 
 		break;
-	case 'dragontamerwiki':
-		$wgDplSettings['maxCategoryCount'] = 7;
-
-		break;
 	case 'dungeonrngwiki':
 		$wgVectorNightMode['logged_in'] = true;
 		$wgVectorNightMode['logged_out'] = true;
+
+		break;
+	case 'emiliabearwiki':
+		$wgJsonConfigs['Map.JsonConfig']['isLocal'] = true;
+		$wgJsonConfigs['Tabular.JsonConfig']['isLocal'] = true;
+
+		$wgJsonConfigs['Map.JsonConfig']['store'] = true;
+		$wgJsonConfigs['Tabular.JsonConfig']['store'] = true;
 
 		break;
 	case 'famedatawiki':
@@ -157,7 +160,6 @@ switch ( $wi->dbname ) {
 
 		break;
 	case 'fischwiki':
-		$wgDplSettings['allowUnlimitedCategories'] = true;
 		$wgLogRestrictions['newusers'] = 'read';
 
 		break;
@@ -182,6 +184,9 @@ switch ( $wi->dbname ) {
 		$wgJsonConfigs['Map.JsonConfig']['remote'] = [
 			'url' => 'https://commons.wikimedia.org/w/api.php'
 		];
+		break;
+	case 'fwtdwiki':
+		$wgMinervaNightMode['base'] = true;
 		break;
 	case 'gpcommonswiki':
 		$wgJsonConfigs['Map.JsonConfig']['isLocal'] = true;
@@ -263,11 +268,6 @@ switch ( $wi->dbname ) {
 		$wgJsonConfigs['Map.JsonConfig']['remote'] = [
 			'url' => 'https://gpcommons.miraheze.org/w/api.php'
 		];
-
-		break;
-	case 'gui7814sgtafanonwiki':
-		$wgDplSettings['maxCategoryCount'] = 1000;
-		$wgDplSettings['maxResultCount'] = 1000;
 
 		break;
 	case 'hommwiki':
@@ -521,10 +521,10 @@ switch ( $wi->dbname ) {
 						'label-message' => 'contactpage-requestaccount-selectissue',
 						'type' => 'radio',
 						'options-messages' => [
+							'version-other' => 'other',
 							'contactpage-requestaccount-selectissue-abusefilterissue' => 'abusefilter',
 							'contactpage-requestaccount-selectissue-recaptchaissues' => 'captcha',
 							'contactpage-requestaccount-selectissue-globalblock' => 'globalblock',
-							'version-other' => 'other',
 						],
 						'help-message' => 'contactpage-requestaccount-selectissue-help',
 						'required' => true,
@@ -582,7 +582,7 @@ switch ( $wi->dbname ) {
 						'label-message' => 'contactpage-requestaccount-otherdetails',
 						'type' => 'textarea',
 						'help-message' => 'contactpage-requestaccount-otherdetails-help',
-						'required' => false,
+						'required' => true,
 					],
 				],
 				'DisplayFormat' => 'raw',
@@ -638,11 +638,6 @@ switch ( $wi->dbname ) {
 		*/
 
 		break;
-	case 'metzowiki':
-		$wgDplSettings['allowUnlimitedCategories'] = true;
-		$wgDplSettings['allowUnlimitedResults'] = true;
-
-		break;
 	case 'namuwitchwiki':
 		$wgDisableLangConversion = true;
 
@@ -668,14 +663,16 @@ switch ( $wi->dbname ) {
 		];
 
 		break;
-	case 'persistwiki':
-		$wgDplSettings['maxCategoryCount'] = 10;
-
-		break;
 	case 'picrosswiki':
 		$wgLogos = [
 			'svg' => "https://static.wikitide.net/picrosswiki/0/0a/Pikuw.svg",
 		];
+		break;
+	case 'piggywiki':
+		$wgVectorNightMode['beta'] = true;
+		$wgVectorNightMode['logged_out'] = true;
+		$wgVectorNightMode['logged_in'] = true;
+
 		break;
 	case 'paneidoversewiki':
 		$wgHooks['AdminLinks'][] = 'onAdminLinks';
@@ -762,6 +759,7 @@ switch ( $wi->dbname ) {
 
 		break;
 	case 'stopitslenderwiki':
+		$wgMinervaNightMode['base'] = true;
 		$wgVectorNightMode['logged_in'] = true;
 		$wgVectorNightMode['logged_out'] = true;
 		$wgVectorNightMode['beta'] = true;
@@ -1142,11 +1140,6 @@ switch ( $wi->dbname ) {
 		}
 
 		break;
-	case 'traceprojectwikiwiki':
-		$wgDplSettings['allowUnlimitedCategories'] = true;
-		$wgDplSettings['allowUnlimitedResults'] = true;
-
-		break;
 	case 'whentheycrywiki':
 		$wgGalleryOptions['imageWidth'] = 200;
 		$wgGalleryOptions['imageHeight'] = 200;
@@ -1185,6 +1178,12 @@ switch ( $wi->dbname ) {
 				}
 			END ) );
 		}
+
+		break;
+	case 'zenithwiki':
+		$wgVectorNightMode['beta'] = true;
+		$wgVectorNightMode['logged_out'] = true;
+		$wgVectorNightMode['logged_in'] = true;
 
 		break;
 	case 'genshinimpactwiki':
